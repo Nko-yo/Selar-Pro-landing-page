@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep every kobo with Selar Pro</title>
+    
+    <!-- Google Font: Spectral -->
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Spectral', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #800080;
+        }
+        .subheading {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Spectral', serif;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6a0dad; /* Deep Purple */
+            margin-top: 10px;
+        }
+        .cta {
+            display: inline-block;
+            background: #800080;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .cta:hover {
+            background: #5a189a;
+        }
+        .nudge {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Get Paid for Your Hard Work</h1>
+        <p class="subheading">Selar helps creators like you keep every kobo you deserve.</p>
+
+        <!-- Calculator -->
+        <label for="price">Product Price (₦):</label>
+        <input type="number" id="price" placeholder="Enter your product price" oninput="calculateLoss()">
+
+        <label for="shares">Estimated Unauthorized Shares:</label>
+        <input type="number" id="shares" placeholder="Enter estimated shares" oninput="calculateLoss()">
+
+        <p class="result" id="lossAmount">You could be losing ₦0 in potential sales.</p>
+
+        <!-- CTA -->
+        <a href="https://selar.com/pricing" class="cta">Upgrade to Selar Pro</a>
+
+        <!-- Nudge -->
+        <p class="nudge">Sellers keep 96% of their revenue, minus a ₦50 charge per sale.</p>
+    </div>
+
+    <script>
+        function calculateLoss() {
+            let price = document.getElementById('price').value;
+            let shares = document.getElementById('shares').value;
+            let loss = price * shares;
+
+            document.getElementById('lossAmount').innerText = 
+                `You could be losing ₦${loss.toLocaleString()} in potential sales.`;
+        }
+    </script
